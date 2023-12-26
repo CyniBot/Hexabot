@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-async function hercai(event, api) {
+async function gemini(event, api) {
   const input = event.body.toLowerCase().split(' ');
 
   if (input.includes('-help')) {
@@ -15,16 +15,16 @@ async function hercai(event, api) {
 
   try {
     const response = await axios.get(`https://hercai.onrender.com/v3-beta/hercai?question=${encodeURIComponent(question)}`);
-    const hercaiResponse = response.data;
+    const geminiResponse = response.data;
 
-    if (hercaiResponse && hercaiResponse.reply) {
-      api.sendMessage(hercaiResponse.reply, event.threadID);
+    if (geminiResponse && geminiResponse.reply) {
+      api.sendMessage(geminiResponse.reply, event.threadID);
     } else {
-      api.sendMessage('Unable to get a response from Hercai at the moment. Please try again later.', event.threadID);
+      api.sendMessage('Unable to get a response from hercai at the moment. Please try again later.', event.threadID);
     }
   } catch (err) {
-    console.error(`Error fetching Hercai response: ${err}`);
-    api.sendMessage('Failed to get a response from Hercai. Please try again later.', event.threadID);
+    console.error(`Error fetching hercai response: ${err}`);
+    api.sendMessage('Failed to get a response from hercai. Please try again later.', event.threadID);
   }
 }
 
