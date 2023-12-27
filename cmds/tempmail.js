@@ -22,11 +22,11 @@ async function tempmail(event, api) {
       await api.sendMessage("⚠️ Please provide a tag for the email address. Use -gen [tag]", event.threadID);
       return;
     }
-    const email = `d8h98.${tag}@inbox.testmail.app`;
+    const email = `h6irj.${tag}@inbox.testmail.app`;
     await api.sendMessage(`📧 Your unique email address is: ${email}`, event.threadID);
   } else if (input.includes("-check")) {
-    const APIKEY = "e2298007-6128-46be-a787-088262816000";
-    const NAMESPACE = "d8h98";
+    const APIKEY = "2bec8322-df9d-4265-a847-6167423dc626";
+    const NAMESPACE = "h6irj";
     const apiUrl = `https://api.testmail.app/api/json?apikey=${APIKEY}&namespace=${NAMESPACE}&pretty=true`;
 
     try {
