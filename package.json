@@ -22,6 +22,9 @@
     "type": "git",
     "url": "https://github.com/0x3EF8/Hexabot"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@koa/cors": "^4.0.0",
     "@koa/router": "^12.0.0",
