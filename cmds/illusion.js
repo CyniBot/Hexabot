@@ -25,7 +25,7 @@ async function illusion(event, api) {
       const prompts = input.slice(1).join(' ');
 
       try {
-        const response = await axios.get(`https://celestial-dainsleif-docs.archashura.repl.co/illusion?image=${encodeURIComponent(imageUrl)}&prompt=${encodeURIComponent(prompts)}`);
+        const response = await axios.get(`https://celestial-3ode.onrender.com/illusion?image=${encodeURIComponent(imageUrl)}&prompt=${encodeURIComponent(prompts)}`);
         const illusionResponse = response.data;
 
         if (illusionResponse && illusionResponse.output) {
