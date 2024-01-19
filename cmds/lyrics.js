@@ -24,10 +24,11 @@ async function lyrics(event, api) {
       const imagePath = path.join(__dirname, '../temp/lyrics.jpg');
 
       request(result.s_image).pipe(fs.createWriteStream(imagePath)).on('finish', () => {
-        api.sendMessage({
-          body: message,
-          attachment: fs.createReadStream(imagePath)
-        }, event.threadID);
+        // Send the message
+        api.sendMessage({ body: message }, event.threadID);
+
+        // Send the attachment
+        api.sendMessage({ attachment: fs.createReadStream(imagePath) }, event.threadID);
       });
     })
     .catch(error => {
