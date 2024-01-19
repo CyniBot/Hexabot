@@ -14,11 +14,11 @@ async function ai(event, api) {
   const question = input.slice(1).join(' ');
 
   try {
-    const response = await axios.get(`https://hercai.onrender.com/v3-beta/hercai?question=${encodeURIComponent(question)}`);
+    const response = await axios.get(`https://cyni-gpt-api.onrender.com/ask?q=${encodeURIComponent(question)}`);
     const aiResponse = response.data;
 
-    if (aiResponse && aiResponse.reply) {
-      api.sendMessage(aiResponse.reply, event.threadID);
+    if (aiResponse && aiResponse.response) {
+      api.sendMessage(aiResponse.response, event.threadID);
     } else {
       api.sendMessage('Unable to get an AI-generated response at the moment. Please try again later.', event.threadID);
     }
